@@ -22,7 +22,16 @@
 /*******************************************/
 
 body {
-     background-color: #f0f0f0;
+     font-family: "Noto Sans", sans-serif;
+     background-image: url('../img/weather.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100vh;
+     /* Set the height to fill the viewport */
+     margin: 0;
+     /* Remove default margin */
+     padding: 0;
 }
 
 
@@ -55,11 +64,13 @@ input[type="text"] {
      margin: 10px 0;
      border: 1px solid #ccc;
      border-radius: 5px;
+     text-align: center;
 }
 
 button {
-     background-color: #007BFF;
+     background-color: #27a798b3;
      color: #fff;
+     font-weight: bolder;
      border: none;
      padding: 10px 20px;
      border-radius: 5px;

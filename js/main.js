@@ -1,8 +1,8 @@
 //Example fetch
-document.querySelector('button').addEventListener('click', getFetch)
+document.querySelector('#searchButton').addEventListener('click', getFetch)
 
 function getFetch() {
-  const location = document.querySelector('input').value.toLowerCase()
+  const location = document.querySelector('#locationInput').value.toLowerCase()
   const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=efe10616d80ccc2b8d421a5760d03baf`
 
   fetch(geoUrl)
@@ -24,7 +24,7 @@ function getFetch() {
       const feelsLike = forecastData.list[0].main.feels_like
       const humidity = forecastData.list[0].main.humidity
       const forecastTime = forecastData.list[0].dt
-      document.querySelector('#currentTemp').innerText = `Temp: ${temp}`
+      document.querySelector('#currentTemp').innerText = `Current Temperature: ${temp}`
       document.querySelector('#feelsLike').innerText = `Feels Like: ${feelsLike}`
       document.querySelector('#humidity').innerText = `Humidity: ${humidity}`
 
@@ -34,10 +34,9 @@ function getFetch() {
         return dateString;
       }
       
-      // Example usage
       const epochTime = forecastTime;
       const gmtTime = convertEpochToGMT(epochTime);
-      document.querySelector('#forecastedTime').innerHTML = gmtTime
+      document.querySelector('#forecastedTime').innerHTML = `Last Forecast: ${gmtTime}`
     })
     .catch(err => {
       console.log(`error ${err}`);
