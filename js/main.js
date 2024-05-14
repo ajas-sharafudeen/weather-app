@@ -20,7 +20,24 @@ function getFetch() {
     .then(forecastData => {
       console.log(forecastData);
       // Update your UI with forecast data here
-      document.querySelector('#currentTemp').innerText = `Temp: ${forecastData}`
+      const temp = forecastData.list[0].main.temp
+      const feelsLike = forecastData.list[0].main.feels_like
+      const humidity = forecastData.list[0].main.humidity
+      const forecastTime = forecastData.list[0].dt
+      document.querySelector('#currentTemp').innerText = `Temp: ${temp}`
+      document.querySelector('#feelsLike').innerText = `Feels Like: ${feelsLike}`
+      document.querySelector('#humidity').innerText = `Humidity: ${humidity}`
+
+      function convertEpochToGMT(epoch) {
+        const date = new Date(epoch * 1000); // Convert seconds to milliseconds
+        const dateString = date.toGMTString(); // Convert date to GMT string
+        return dateString;
+      }
+      
+      // Example usage
+      const epochTime = forecastTime;
+      const gmtTime = convertEpochToGMT(epochTime);
+      document.querySelector('#forecastedTime').innerHTML = gmtTime
     })
     .catch(err => {
       console.log(`error ${err}`);
