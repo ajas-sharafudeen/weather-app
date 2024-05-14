@@ -6,6 +6,11 @@
 	<meta name="description" content="Your description goes here">
 	<meta name="keywords" content="one, two, three">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
 	<title>Weather App</title>
 
 	<!-- external CSS link -->
@@ -15,21 +20,18 @@
 
 <body>
 	<div class="container">
-		<h1>Check the Current Weather!</h1>
+		<h1>Check the Current Weather</h1>
 		<input type="text" id="locationInput" placeholder="Enter a location">
-		<button id="searchButton">Search</button>
+		<button id="searchButton">SEARCH</button>
 		<div class="weather-info">
-			<h2 id="location"></h2>
-			<p id="temperature"></p>
-			<p id="description"></p>
-			<p id="state">State</p>
-			<p id="country">Country</p>
-			<p id="latitude">Latitude</p>
-			<p id="longitude">Longitude</p>
-			<p id="currentTemp">Temp</p>
-			<p id="feelsLike">Feels Like:</p>
-			<p id="humidity">Humidity:</p>
-			<p id="forecastedTime">Forecasted Time:</p>
+			<h2 id="currentTemp"></h2>
+			<p id="feelsLike"></p>
+			<p id="humidity"></p>
+			<p id="state"></p>
+			<p id="country"></p>
+			<p id="latitude"></p>
+			<p id="longitude"></p>
+			<p id="forecastedTime"></p>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
