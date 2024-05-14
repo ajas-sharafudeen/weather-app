@@ -14,19 +14,24 @@
 </head>
 
 <body>
-	<h1>Check the Current Weather!</h1>
-	<input type="text" name="" value="">
-	<button type="button" name="button">Enter location name</button>
-
-	<h3 id="state">State</h3>
-	<h3 id="country">Country</h3>
-	<h3 id="latitude">Latitude</h3>
-	<h3 id="longitude">Longitude</h3>
-
-	<h4 id="currentTemp">Temp</h4>
-	<h4 id="feelsLike">Feels Like:</h4>
-	<h4 id="humidity">Humidity:</h4>
-	<h4 id="forecastedTime">Forecasted Time:</h4>
+	<div class="container">
+		<h1>Check the Current Weather!</h1>
+		<input type="text" id="locationInput" placeholder="Enter a location">
+		<button id="searchButton">Search</button>
+		<div class="weather-info">
+			<h2 id="location"></h2>
+			<p id="temperature"></p>
+			<p id="description"></p>
+			<p id="state">State</p>
+			<p id="country">Country</p>
+			<p id="latitude">Latitude</p>
+			<p id="longitude">Longitude</p>
+			<p id="currentTemp">Temp</p>
+			<p id="feelsLike">Feels Like:</p>
+			<p id="humidity">Humidity:</p>
+			<p id="forecastedTime">Forecasted Time:</p>
+		</div>
+	</div>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 
