@@ -3,7 +3,7 @@ document.querySelector('#searchButton').addEventListener('click', getFetch)
 
 function getFetch() {
   const location = document.querySelector('#locationInput').value.toLowerCase()
-  const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=efe10616d80ccc2b8d421a5760d03baf`
+  const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=efe10616d80ccc2b8d421a5760d03baf`
 
   fetch(geoUrl)
     .then(res => res.json()) // parse response as JSON
@@ -13,7 +13,7 @@ function getFetch() {
       document.querySelector('#country').innerText = `Country: ${data[0].country}`
       document.querySelector('#latitude').innerText = `Latitude: ${data[0].lat}`
       document.querySelector('#longitude').innerText = `Longitude: ${data[0].lon}`
-      const forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${data[0].lat}&lon=${data[0].lon}&appid=efe10616d80ccc2b8d421a5760d03baf&units=metric`
+      const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${data[0].lat}&lon=${data[0].lon}&appid=efe10616d80ccc2b8d421a5760d03baf&units=metric`
       return fetch(forecastUrl);
     })
     .then(res => res.json()) // parse forecast response as JSON
@@ -33,7 +33,7 @@ function getFetch() {
         const dateString = date.toGMTString(); // Convert date to GMT string
         return dateString;
       }
-      
+
       const epochTime = forecastTime;
       const gmtTime = convertEpochToGMT(epochTime);
       document.querySelector('#forecastedTime').innerHTML = `Last Forecast: ${gmtTime}`
